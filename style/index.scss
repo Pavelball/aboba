@@ -16,16 +16,31 @@ body {
         background-color: #6F2232;
         padding: 20px 0;
         #info {
-            padding: 20px 0;
-            height: 100px;
-            & > div {
-                padding: auto;
+            padding: 50px 0;
+            & > div:not(.w-100) {
                 border: 1px solid #282828;
                 border-radius: 10px;
-                text-align: center;
-                height: 30px;
+                height: auto;
                 cursor: pointer;
                 background-color: #282828;
+                margin: 5px 5px;
+                .headBlog {
+                    text-transform: uppercase;
+                    &::after {
+                        content: '';
+                        display: block;
+                        height: 1px;
+                        background: white;
+                    }
+                }
+
+                .bodyBlog {
+                    text-transform: uppercase;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
             }
         }
 

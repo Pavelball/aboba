@@ -22,18 +22,36 @@ body main {
 }
 
 body main #info {
-  padding: 20px 0;
-  height: 100px;
+  padding: 50px 0;
 }
 
-body main #info > div {
-  padding: auto;
+body main #info > div:not(.w-100) {
   border: 1px solid #282828;
   border-radius: 10px;
-  text-align: center;
-  height: 30px;
+  height: auto;
   cursor: pointer;
   background-color: #282828;
+  margin: 5px 5px;
+}
+
+body main #info > div:not(.w-100) .headBlog {
+  text-transform: uppercase;
+}
+
+body main #info > div:not(.w-100) .headBlog::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: white;
+}
+
+body main #info > div:not(.w-100) .bodyBlog {
+  text-transform: uppercase;
+}
+
+body main #info > div:not(.w-100) .bodyBlog img {
+  height: 100%;
+  width: 100%;
 }
 
 body main #sortable {
