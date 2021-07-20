@@ -1,9 +1,50 @@
 body {
     color: white !important;
+
+    #preloader {
+        font-size: 100px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 999;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        display: grid;
+        background-color: #282828;
+        font-weight: bolder;
+
+        .line {
+            background-color: white;
+            height: 100%;
+            width: 0%;
+            position: absolute;
+            mix-blend-mode: difference;
+            animation: loading 1s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-delay: 0.5s;
+        }
+
+        span:last-child {
+            font-size: 50px;
+        }
+
+        & > div {
+            justify-self: center;
+            align-self: center;
+            position: absolute;
+        }
+    }
+
     header {
         background-color: #282828;
         line-height: 3em;
         font-size: 20px;
+        top: 0;
+        position: fixed;
+        z-index: 20;
+        width: 100%;
         #logo {
             font-size: 35px;
             & > :last-child {
@@ -13,21 +54,53 @@ body {
     }
 
     main {
-        background-color: #6F2232;
-        padding: 20px 0;
+        background-color: #6f2232;
+        margin: 40px 0;
+        padding: 40px 0;
+
+        .container {
+            padding: 20px 0;
+        }
+
+        #typing {
+            background-color: #1a1a1d;
+
+            div {
+                padding: 10px;
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
+                &:last-child {
+                    font-size: 55px;
+                    align-self: center;
+                    text-align: center;
+                    .typed-cursor {
+                        opacity: 1;
+                        font-weight: 100;
+                        animation: blink 0.7s infinite;
+                    }
+                }
+            }
+        }
+
         #info {
-            padding: 50px 0;
-            & > div:not(.w-100) {
+            & > div:not(.m100) {
                 border: 1px solid #282828;
-                border-radius: 10px;
+                border-radius: 0px;
                 height: auto;
                 cursor: pointer;
-                background-color: #282828;
-                margin: 5px 5px;
+                background-color: #4e4e50;
+                padding: 0;
                 .headBlog {
                     text-transform: uppercase;
+                    background-color: #282828;
+                    padding: 4px 0px 0px;
+                    span {
+                        padding-left: 3px;
+                    }
                     &::after {
-                        content: '';
+                        content: "";
                         display: block;
                         height: 1px;
                         background: white;
@@ -36,6 +109,8 @@ body {
 
                 .bodyBlog {
                     text-transform: uppercase;
+                    padding: 3px;
+                    color: white;
                     img {
                         height: 100%;
                         width: 100%;
@@ -44,11 +119,72 @@ body {
             }
         }
 
-        #sortable {
-            color: black;
-            li {
-                cursor: pointer;
+        #MyBestFriends {
+            min-height: 500px;
+            height: auto;
+            padding: 20px 0;
+            #collapseEgor, #collapseDanil, #collapseArtem, #collapseAlex {
+                background-color: #5D5C61;
+                padding: 20px 0;
+                border-radius: 20px;
+                .card {
+                    border-color: #4E4E50;
+                    width: 70%;
+                    margin: 0 auto;
+                    .card-img-top {
+                        width: auto;
+                    }
+                }
+            }
+
+            a {
+                width: 170px;
+                margin-bottom: 20px;
+            }
+
+            .display-2 {
+                text-align: center;
+                padding: 10px 0;
             }
         }
     }
+
+    @keyframes loading {
+        0% {
+            width: 0%;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+
+    @keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
 }
+
+/*.dragDick {
+    height: 100px;
+    width: 100px;
+    img {
+        height: 100px;
+        width: 100px;
+        transform: rotate(-20deg);
+    }
+}
+<div class="dragDick ui-widget-content">
+        <img src="media/external-content.duckduckgo.png" alt="">
+    </div>
+
+$(function () {
+    $(".dragDick").draggable();
+});
+*/

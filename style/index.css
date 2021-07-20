@@ -2,10 +2,58 @@ body {
   color: white !important;
 }
 
+body #preloader {
+  font-size: 100px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  display: -ms-grid;
+  display: grid;
+  background-color: #282828;
+  font-weight: bolder;
+}
+
+body #preloader .line {
+  background-color: white;
+  height: 100%;
+  width: 0%;
+  position: absolute;
+  mix-blend-mode: difference;
+  -webkit-animation: loading 1s;
+          animation: loading 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+body #preloader span:last-child {
+  font-size: 50px;
+}
+
+body #preloader > div {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  position: absolute;
+}
+
 body header {
   background-color: #282828;
   line-height: 3em;
   font-size: 20px;
+  top: 0;
+  position: fixed;
+  z-index: 20;
+  width: 100%;
 }
 
 body header #logo {
@@ -17,48 +65,169 @@ body header #logo > :last-child {
 }
 
 body main {
-  background-color: #6F2232;
+  background-color: #6f2232;
+  margin: 40px 0;
+  padding: 40px 0;
+}
+
+body main .container {
   padding: 20px 0;
 }
 
-body main #info {
-  padding: 50px 0;
+body main #typing {
+  background-color: #1a1a1d;
 }
 
-body main #info > div:not(.w-100) {
+body main #typing div {
+  padding: 10px;
+}
+
+body main #typing div img {
+  height: 100%;
+  width: 100%;
+}
+
+body main #typing div:last-child {
+  font-size: 55px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+}
+
+body main #typing div:last-child .typed-cursor {
+  opacity: 1;
+  font-weight: 100;
+  -webkit-animation: blink 0.7s infinite;
+          animation: blink 0.7s infinite;
+}
+
+body main #info > div:not(.m100) {
   border: 1px solid #282828;
-  border-radius: 10px;
+  border-radius: 0px;
   height: auto;
   cursor: pointer;
-  background-color: #282828;
-  margin: 5px 5px;
+  background-color: #4e4e50;
+  padding: 0;
 }
 
-body main #info > div:not(.w-100) .headBlog {
+body main #info > div:not(.m100) .headBlog {
   text-transform: uppercase;
+  background-color: #282828;
+  padding: 4px 0px 0px;
 }
 
-body main #info > div:not(.w-100) .headBlog::after {
-  content: '';
+body main #info > div:not(.m100) .headBlog span {
+  padding-left: 3px;
+}
+
+body main #info > div:not(.m100) .headBlog::after {
+  content: "";
   display: block;
   height: 1px;
   background: white;
 }
 
-body main #info > div:not(.w-100) .bodyBlog {
+body main #info > div:not(.m100) .bodyBlog {
   text-transform: uppercase;
+  padding: 3px;
+  color: white;
 }
 
-body main #info > div:not(.w-100) .bodyBlog img {
+body main #info > div:not(.m100) .bodyBlog img {
   height: 100%;
   width: 100%;
 }
 
-body main #sortable {
-  color: black;
+body main #MyBestFriends {
+  min-height: 500px;
+  height: auto;
+  padding: 20px 0;
 }
 
-body main #sortable li {
-  cursor: pointer;
+body main #MyBestFriends #collapseEgor, body main #MyBestFriends #collapseDanil, body main #MyBestFriends #collapseArtem, body main #MyBestFriends #collapseAlex {
+  background-color: #5D5C61;
+  padding: 20px 0;
+  border-radius: 20px;
 }
+
+body main #MyBestFriends #collapseEgor .card, body main #MyBestFriends #collapseDanil .card, body main #MyBestFriends #collapseArtem .card, body main #MyBestFriends #collapseAlex .card {
+  border-color: #4E4E50;
+  width: 70%;
+  margin: 0 auto;
+}
+
+body main #MyBestFriends #collapseEgor .card .card-img-top, body main #MyBestFriends #collapseDanil .card .card-img-top, body main #MyBestFriends #collapseArtem .card .card-img-top, body main #MyBestFriends #collapseAlex .card .card-img-top {
+  width: auto;
+}
+
+body main #MyBestFriends a {
+  width: 170px;
+  margin-bottom: 20px;
+}
+
+body main #MyBestFriends .display-2 {
+  text-align: center;
+  padding: 10px 0;
+}
+
+@-webkit-keyframes loading {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*.dragDick {
+    height: 100px;
+    width: 100px;
+    img {
+        height: 100px;
+        width: 100px;
+        transform: rotate(-20deg);
+    }
+}
+<div class="dragDick ui-widget-content">
+        <img src="media/external-content.duckduckgo.png" alt="">
+    </div>
+
+$(function () {
+    $(".dragDick").draggable();
+});
+*/
 /*# sourceMappingURL=index.css.map */
