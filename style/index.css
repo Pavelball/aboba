@@ -215,6 +215,10 @@ body main #MyBestFriends .display-2 {
   }
 }
 
+body .width-100 {
+  width: 100%;
+}
+
 /*.dragDick {
     height: 100px;
     width: 100px;
