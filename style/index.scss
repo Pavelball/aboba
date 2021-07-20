@@ -87,6 +87,7 @@ body {
             & > div:not(.m100) {
                 border: 1px solid #282828;
                 border-radius: 0px;
+                width: 365px;
                 height: auto;
                 cursor: pointer;
                 background-color: #4e4e50;
@@ -131,10 +132,6 @@ body {
                     width: 70%;
                     height: auto;
                     margin: 0 auto;
-                    .card-img-top {
-                        width: auto;
-                        height: auto;
-                    }
                 }
             }
 
@@ -148,6 +145,10 @@ body {
                 padding: 10px 0;
             }
         }
+    }
+
+    .row {
+        margin: 0 auto;
     }
 
     @keyframes loading {

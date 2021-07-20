@@ -105,6 +105,7 @@ body main #typing div:last-child .typed-cursor {
 body main #info > div:not(.m100) {
   border: 1px solid #282828;
   border-radius: 0px;
+  width: 365px;
   height: auto;
   cursor: pointer;
   background-color: #4e4e50;
@@ -158,11 +159,6 @@ body main #MyBestFriends #collapseEgor .card, body main #MyBestFriends #collapse
   margin: 0 auto;
 }
 
-body main #MyBestFriends #collapseEgor .card .card-img-top, body main #MyBestFriends #collapseDanil .card .card-img-top, body main #MyBestFriends #collapseArtem .card .card-img-top, body main #MyBestFriends #collapseAlex .card .card-img-top {
-  width: auto;
-  height: auto;
-}
-
 body main #MyBestFriends a {
   width: 170px;
   margin-bottom: 20px;
@@ -171,6 +167,10 @@ body main #MyBestFriends a {
 body main #MyBestFriends .display-2 {
   text-align: center;
   padding: 10px 0;
+}
+
+body .row {
+  margin: 0 auto;
 }
 
 @-webkit-keyframes loading {
