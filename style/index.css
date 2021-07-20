@@ -34,7 +34,7 @@ body #preloader .line {
 }
 
 body #preloader span:last-child {
-  font-size: 50px;
+  font-size: 0.6em;
 }
 
 body #preloader > div {
@@ -51,7 +51,8 @@ body header {
   line-height: 3em;
   font-size: 20px;
   top: 0;
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   z-index: 20;
   width: 100%;
 }
@@ -66,7 +67,6 @@ body header #logo > :last-child {
 
 body main {
   background-color: #6f2232;
-  margin: 40px 0;
   padding: 40px 0;
 }
 
@@ -154,11 +154,13 @@ body main #MyBestFriends #collapseEgor, body main #MyBestFriends #collapseDanil,
 body main #MyBestFriends #collapseEgor .card, body main #MyBestFriends #collapseDanil .card, body main #MyBestFriends #collapseArtem .card, body main #MyBestFriends #collapseAlex .card {
   border-color: #4E4E50;
   width: 70%;
+  height: auto;
   margin: 0 auto;
 }
 
 body main #MyBestFriends #collapseEgor .card .card-img-top, body main #MyBestFriends #collapseDanil .card .card-img-top, body main #MyBestFriends #collapseArtem .card .card-img-top, body main #MyBestFriends #collapseAlex .card .card-img-top {
   width: auto;
+  height: auto;
 }
 
 body main #MyBestFriends a {
