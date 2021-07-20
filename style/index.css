@@ -1,5 +1,8 @@
 body {
   color: white !important;
+  /*.row {
+        margin: 0 auto;
+    }*/
 }
 
 body #preloader {
@@ -167,10 +170,6 @@ body main #MyBestFriends a {
 body main #MyBestFriends .display-2 {
   text-align: center;
   padding: 10px 0;
-}
-
-body .row {
-  margin: 0 auto;
 }
 
 @-webkit-keyframes loading {
