@@ -1,8 +1,5 @@
 body {
   color: white !important;
-  /*.row {
-        margin: 0 auto;
-    }*/
 }
 
 body #preloader {
@@ -144,19 +141,26 @@ body main #info > div:not(.m100) .bodyBlog img {
 }
 
 body main #MyBestFriends {
+  margin: 0 auto;
   min-height: 500px;
   height: auto;
   padding: 20px 0;
 }
 
-body main #MyBestFriends #collapseEgor, body main #MyBestFriends #collapseDanil, body main #MyBestFriends #collapseArtem, body main #MyBestFriends #collapseAlex {
-  background-color: #5D5C61;
+body main #MyBestFriends #collapseEgor,
+body main #MyBestFriends #collapseDanil,
+body main #MyBestFriends #collapseArtem,
+body main #MyBestFriends #collapseAlex {
+  background-color: #5d5c61;
   padding: 20px 0;
   border-radius: 20px;
 }
 
-body main #MyBestFriends #collapseEgor .card, body main #MyBestFriends #collapseDanil .card, body main #MyBestFriends #collapseArtem .card, body main #MyBestFriends #collapseAlex .card {
-  border-color: #4E4E50;
+body main #MyBestFriends #collapseEgor .card,
+body main #MyBestFriends #collapseDanil .card,
+body main #MyBestFriends #collapseArtem .card,
+body main #MyBestFriends #collapseAlex .card {
+  border-color: #4e4e50;
   width: 70%;
   height: auto;
   margin: 0 auto;
@@ -216,6 +220,10 @@ body main #MyBestFriends .display-2 {
 
 body .width-100 {
   width: 100%;
+}
+
+body .m0-auto {
+  margin: 0 auto;
 }
 
 /*.dragDick {
