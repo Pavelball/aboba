@@ -26,7 +26,7 @@ $(document).ready(() => {
 }
 )
 
-const pathImgData = "/js/data/pathImg.json";
+const pathImgData = "./js/data/pathImg.json";
 var innerHtmlCont = '', tempHtml, idFriends = ['collapseEgor', 'collapseDanil', 'collapseArtem', 'collapseAlex'];
 
 $(window).on('load', () => {
