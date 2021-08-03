@@ -27,7 +27,7 @@ $(document).ready(() => {
 )
 
 const pathImgData = "./js/data/pathImg.json";
-var innerHtmlCont = '', tempHtml, idFriends = ['collapseEgor', 'collapseDanil', 'collapseArtem', 'collapseAlex'];
+var innerHtmlCont = '', tempHtml, nameFriends;
 
 $(window).on('load', () => {
     let id = 0;
@@ -35,27 +35,31 @@ $(window).on('load', () => {
         data = data[0];
         Object.keys(data).forEach(key => {
             tempHtml = '';
-            Object.keys(data[key]).forEach(value => {
+            nameFriends = data[key].name.split(/_/);
+            Object.keys(temp = data[key].path).forEach(value => {
                 tempHtml += `
-                <div class="col-sm">
-                    <div class="card">
-                        <img src="media/${idFriends[id].split(/(?=[A-Z])/)[1] + '/' + data[key][value]}" 
-                            class="card-img-top" alt="">
-                    </div>
+                <div class="col">
+                    <img src="media/${nameFriends[0] + '/' + temp[value]}" alt="">
                 </div>`
             });
             innerHtmlCont +=
                 `
-                <div class="col-lg">
-                    <div class="collapse" id="${idFriends[id]}">
-                        <div class="row row-cols-sm-3 gy-4 justify-content-evenly">
-                            ${tempHtml}
+                <div class="card">
+                    <div class="card-header ${data[key].collapsed}" data-toggle="collapse" data-target="#${nameFriends[0]}">
+                        ${nameFriends[0] + ' ' + nameFriends[1]}
+                    </div>
+
+                    <div id="${nameFriends[0]}" class="collapse width ${data[key].show}" data-parent="#accordionFriends">
+                        <div class="card-body">
+                            <div class="row row-cols-1 row-cols-sm-3 gy-2">
+                                ${tempHtml}
+                            </div>
                         </div>
                     </div>
                 </div>
                 `
             id++;
         });
-        document.getElementById('bodyInner').insertAdjacentHTML('beforeend', innerHtmlCont);
+        document.getElementById('accordionFriends').insertAdjacentHTML('afterbegin', innerHtmlCont);
     });
-})
+});

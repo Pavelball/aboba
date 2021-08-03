@@ -1,5 +1,9 @@
 body {
-    color: white !important;
+    color: #84B1CB !important;
+    img, #typing {
+        pointer-events: none;
+        user-select: none;
+    }
 
     #preloader {
         font-size: 100px;
@@ -11,8 +15,9 @@ body {
         height: 100%;
         overflow: visible;
         display: grid;
-        background-color: #282828;
+        background-color: #6B6E70;
         font-weight: bolder;
+        color: white;
 
         .line {
             background-color: white;
@@ -38,12 +43,12 @@ body {
     }
 
     header {
-        background-color: #282828;
+        background-color: #364954;
         line-height: 3em;
         font-size: 20px;
         top: 0;
-        position: sticky;
         z-index: 20;
+        position: sticky;
         width: 100%;
         #logo {
             font-size: 35px;
@@ -54,7 +59,7 @@ body {
     }
 
     main {
-        background-color: #6f2232;
+        background-color: #6B6E70;
         padding: 40px 0;
 
         .container {
@@ -62,7 +67,7 @@ body {
         }
 
         #typing {
-            background-color: #1a1a1d;
+            background-color: #364954;
 
             div {
                 padding: 10px;
@@ -85,26 +90,25 @@ body {
 
         #info {
             & > div:not(.m100) {
-                border: 1px solid #282828;
+                border: 1px solid #474B4F;
                 border-radius: 0px;
                 width: 365px;
                 height: auto;
                 cursor: pointer;
-                background-color: #4e4e50;
+                background-color: #474B4F;
                 padding: 0;
                 .headBlog {
                     text-transform: uppercase;
-                    background-color: #282828;
                     padding: 4px 0px 0px;
                     span {
                         padding-left: 3px;
                     }
-                    &::after {
+                    /*&::after {
                         content: "";
                         display: block;
                         height: 1px;
                         background: white;
-                    }
+                    }*/
                 }
 
                 .bodyBlog {
@@ -120,22 +124,90 @@ body {
         }
 
         #MyBestFriends {
-            margin: 0 auto;
-            min-height: 500px;
-            height: auto;
-            padding: 20px 0;
-            #collapseEgor,
-            #collapseDanil,
-            #collapseArtem,
-            #collapseAlex {
-                background-color: #5d5c61;
-                padding: 20px 0;
-                border-radius: 20px;
-                .card {
-                    border-color: #4e4e50;
-                    width: 70%;
-                    height: auto;
+            .accordion {
+                display: flex;
+                width: auto;
+                justify-content: center;
+                min-height: 400px;
+                .width {
                     margin: 0 auto;
+                }
+
+                .collapse {
+                    overflow: auto;
+                    &::-webkit-scrollbar {
+                        width: 0px;
+                    }
+                }
+                
+                & .card {
+                    background-color: #364954;
+                    flex-direction: row;
+                    flex-grow: 0;
+                    flex-shrink: 1;
+                    min-width: min-content;
+                    max-height: 550px;
+                    .card-header {
+                        background-color: #738A99;
+                        cursor: pointer;
+                        writing-mode: vertical-rl;
+                        text-orientation: upright;
+                        padding: 0 !important;
+                        color: #282828;
+                        border-color: #738A99;
+                        border-radius: calc(.25rem - 1px);
+                        &:not(.collapsed) {
+                            pointer-events: none;
+                        }
+                    }
+
+                    &:not(:first-child):not(:last-child) {
+                        border-radius: 0 0 0 0;
+                    }
+
+                    &:first-child {
+                        border-radius: 0.25rem 0 0 0.25rem;
+                    }
+
+                    &:last-child {
+                        border-radius: 0 0.25rem 0.25rem 0;
+                    }
+
+                    .card-body {       
+                        @media (min-width: 1100px) {
+                            min-width: 900px;
+                            max-width: 900px;
+                        }
+                        @media (min-width: 900px) and (max-width: 1100px) {
+                            min-width: 700px;
+                            max-width: 700px;
+                        }
+                        @media (min-width: 700px) and (max-width: 899px) {
+                            min-width: 500px;
+                            max-width: 500px;
+                        }
+                        @media (min-width: 375px) and (max-width: 699px) {
+                            min-width: 200px;
+                            max-width: 200px;
+                        }
+                        @media (max-width: 375px) {
+                            min-width: 200px;
+                            max-width: 200px;
+                        }
+                        div:not(.row) {
+                            margin: 0 auto;
+                            margin-top: 10px;
+                            img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+
+                .collapsing.width {
+                    transition: width 0.35s ease;
+                    height: auto;
+                    width: 0;
                 }
             }
 
