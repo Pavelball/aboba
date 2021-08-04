@@ -113,7 +113,7 @@ body main #typing div .box::before {
   left: 20px;
   right: 20px;
   bottom: 20px;
-  background: url("/media/Ghouls/7sku.gif");
+  background: url("../media/Ghouls/7sku.gif");
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   opacity: .1;
