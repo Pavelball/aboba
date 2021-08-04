@@ -276,7 +276,8 @@ body main #MyBestFriends .accordion .card:last-child {
 
 @media (max-width: 375px) {
   body main #MyBestFriends .accordion .card .card-body {
-    width: 100%;
+    min-width: 200px;
+    max-width: 200px;
   }
 }
 

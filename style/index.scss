@@ -220,7 +220,8 @@ body {
                             max-width: 200px;
                         }
                         @media (max-width: 375px) {
-                            width: 100%;
+                            min-width: 200px;
+                            max-width: 200px;
                         }
                         div:not(.row) {
                             margin: 0 auto;
