@@ -46,7 +46,9 @@ $(window).on('load', () => {
                 `
                 <div class="card">
                     <div class="card-header ${data[key].collapsed}" data-toggle="collapse" data-target="#${nameFriends[0]}">
-                        ${nameFriends[0] + ' ' + nameFriends[1]}
+                        <span>
+                            ${nameFriends[0] + ' ' + nameFriends[1]}
+                        </span>
                     </div>
 
                     <div id="${nameFriends[0]}" class="collapse width ${data[key].show}" data-parent="#accordionFriends">

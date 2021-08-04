@@ -1,6 +1,7 @@
 body {
-    color: #84B1CB !important;
-    img, #typing {
+    color: #84b1cb !important;
+    img,
+    #typing {
         pointer-events: none;
         user-select: none;
     }
@@ -15,7 +16,7 @@ body {
         height: 100%;
         overflow: visible;
         display: grid;
-        background-color: #6B6E70;
+        background-color: #6b6e70;
         font-weight: bolder;
         color: white;
 
@@ -43,7 +44,7 @@ body {
     }
 
     header {
-        background-color: #364954;
+        background-color: #070707;
         line-height: 3em;
         font-size: 20px;
         top: 0;
@@ -59,7 +60,7 @@ body {
     }
 
     main {
-        background-color: #6B6E70;
+        background-color: #6b6e70;
         padding: 40px 0;
 
         .container {
@@ -67,13 +68,35 @@ body {
         }
 
         #typing {
-            background-color: #364954;
+            background-color: #f0f0f0;
+            color: #070707;
 
             div {
                 padding: 10px;
-                img {
+                /*.flexxx {
+                    position: absolute;
                     height: 100%;
                     width: 100%;
+                    opacity: 0.4;
+                    padding: 0;
+                }*/
+                .box {
+                    img {
+                        height: 100%;
+                        width: 100%;
+                    }
+                    &::before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: 20px;
+                        left: 20px;
+                        right: 20px;
+                        bottom: 20px;
+                        background: url("/media/Ghouls/7sku.gif");
+                        transition: all 0.3s ease;
+                        opacity: .1;
+                    }
                 }
                 &:last-child {
                     font-size: 55px;
@@ -90,12 +113,12 @@ body {
 
         #info {
             & > div:not(.m100) {
-                border: 1px solid #474B4F;
+                border: 0.1px solid #070707;
                 border-radius: 0px;
                 width: 365px;
                 height: auto;
                 cursor: pointer;
-                background-color: #474B4F;
+                background-color: #070707;
                 padding: 0;
                 .headBlog {
                     text-transform: uppercase;
@@ -139,25 +162,31 @@ body {
                         width: 0px;
                     }
                 }
-                
+
                 & .card {
-                    background-color: #364954;
+                    background-color: #f0f0f0;
                     flex-direction: row;
                     flex-grow: 0;
                     flex-shrink: 1;
                     min-width: min-content;
                     max-height: 550px;
                     .card-header {
-                        background-color: #738A99;
+                        background-color: #f0f0f0;
                         cursor: pointer;
-                        writing-mode: vertical-rl;
-                        text-orientation: upright;
                         padding: 0 !important;
-                        color: #282828;
-                        border-color: #738A99;
-                        border-radius: calc(.25rem - 1px);
+                        color: #070707;
+                        border-color: #f0f0f0;
+                        border-radius: calc(0.25rem - 1px);
                         &:not(.collapsed) {
                             pointer-events: none;
+                        }
+
+                        & > span {
+                            font-size: 18px;
+                            letter-spacing: 4px;
+                            writing-mode: vertical-lr;
+                            transform: rotate(-180deg);
+                            padding: 5px 0;
                         }
                     }
 
@@ -173,12 +202,12 @@ body {
                         border-radius: 0 0.25rem 0.25rem 0;
                     }
 
-                    .card-body {       
+                    .card-body {
                         @media (min-width: 1100px) {
                             min-width: 900px;
                             max-width: 900px;
                         }
-                        @media (min-width: 900px) and (max-width: 1100px) {
+                        @media (min-width: 900px) and (max-width: 1099px) {
                             min-width: 700px;
                             max-width: 700px;
                         }
@@ -186,13 +215,12 @@ body {
                             min-width: 500px;
                             max-width: 500px;
                         }
-                        @media (min-width: 375px) and (max-width: 699px) {
+                        @media (min-width: 376px) and (max-width: 699px) {
                             min-width: 200px;
                             max-width: 200px;
                         }
                         @media (max-width: 375px) {
-                            min-width: 200px;
-                            max-width: 200px;
+                            width: 100%;
                         }
                         div:not(.row) {
                             margin: 0 auto;
@@ -219,6 +247,10 @@ body {
             .display-2 {
                 text-align: center;
                 padding: 10px 0;
+                color: transparent;
+                -webkit-background-clip: text;
+                background-clip: text;
+                background-image: linear-gradient(-191deg, #070707 0%, #84b1cb 30%, #f0f0f0 100%);
             }
         }
     }

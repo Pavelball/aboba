@@ -1,8 +1,9 @@
 body {
-  color: #84B1CB !important;
+  color: #84b1cb !important;
 }
 
-body img, body #typing {
+body img,
+body #typing {
   pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -21,7 +22,7 @@ body #preloader {
   overflow: visible;
   display: -ms-grid;
   display: grid;
-  background-color: #6B6E70;
+  background-color: #6b6e70;
   font-weight: bolder;
   color: white;
 }
@@ -56,7 +57,7 @@ body #preloader > div {
 }
 
 body header {
-  background-color: #364954;
+  background-color: #070707;
   line-height: 3em;
   font-size: 20px;
   top: 0;
@@ -75,7 +76,7 @@ body header #logo > :last-child {
 }
 
 body main {
-  background-color: #6B6E70;
+  background-color: #6b6e70;
   padding: 40px 0;
 }
 
@@ -84,16 +85,38 @@ body main .container {
 }
 
 body main #typing {
-  background-color: #364954;
+  background-color: #f0f0f0;
+  color: #070707;
 }
 
 body main #typing div {
   padding: 10px;
+  /*.flexxx {
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    opacity: 0.4;
+                    padding: 0;
+                }*/
 }
 
-body main #typing div img {
+body main #typing div .box img {
   height: 100%;
   width: 100%;
+}
+
+body main #typing div .box::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: url("/media/Ghouls/7sku.gif");
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  opacity: .1;
 }
 
 body main #typing div:last-child {
@@ -112,12 +135,12 @@ body main #typing div:last-child .typed-cursor {
 }
 
 body main #info > div:not(.m100) {
-  border: 1px solid #474B4F;
+  border: 0.1px solid #070707;
   border-radius: 0px;
   width: 365px;
   height: auto;
   cursor: pointer;
-  background-color: #474B4F;
+  background-color: #070707;
   padding: 0;
 }
 
@@ -171,7 +194,7 @@ body main #MyBestFriends .accordion .collapse::-webkit-scrollbar {
 }
 
 body main #MyBestFriends .accordion .card {
-  background-color: #364954;
+  background-color: #f0f0f0;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -188,20 +211,27 @@ body main #MyBestFriends .accordion .card {
 }
 
 body main #MyBestFriends .accordion .card .card-header {
-  background-color: #738A99;
+  background-color: #f0f0f0;
   cursor: pointer;
-  -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl;
-  text-orientation: upright;
   padding: 0 !important;
-  color: #282828;
-  border-color: #738A99;
-  border-radius: calc(.25rem - 1px);
+  color: #070707;
+  border-color: #f0f0f0;
+  border-radius: calc(0.25rem - 1px);
 }
 
 body main #MyBestFriends .accordion .card .card-header:not(.collapsed) {
   pointer-events: none;
+}
+
+body main #MyBestFriends .accordion .card .card-header > span {
+  font-size: 18px;
+  letter-spacing: 4px;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  padding: 5px 0;
 }
 
 body main #MyBestFriends .accordion .card:not(:first-child):not(:last-child) {
@@ -223,7 +253,7 @@ body main #MyBestFriends .accordion .card:last-child {
   }
 }
 
-@media (min-width: 900px) and (max-width: 1100px) {
+@media (min-width: 900px) and (max-width: 1099px) {
   body main #MyBestFriends .accordion .card .card-body {
     min-width: 700px;
     max-width: 700px;
@@ -237,7 +267,7 @@ body main #MyBestFriends .accordion .card:last-child {
   }
 }
 
-@media (min-width: 375px) and (max-width: 699px) {
+@media (min-width: 376px) and (max-width: 699px) {
   body main #MyBestFriends .accordion .card .card-body {
     min-width: 200px;
     max-width: 200px;
@@ -246,8 +276,7 @@ body main #MyBestFriends .accordion .card:last-child {
 
 @media (max-width: 375px) {
   body main #MyBestFriends .accordion .card .card-body {
-    min-width: 200px;
-    max-width: 200px;
+    width: 100%;
   }
 }
 
@@ -275,6 +304,10 @@ body main #MyBestFriends a {
 body main #MyBestFriends .display-2 {
   text-align: center;
   padding: 10px 0;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(-191deg, #070707 0%, #84b1cb 30%, #f0f0f0 100%);
 }
 
 @-webkit-keyframes loading {
